@@ -38,7 +38,6 @@ public class SendMessageBot extends PeekkaMain {
 		SendMessage message = new SendMessage();
 		Long chat_id = update.getMessage().getChatId();
 		if (command.equals("/start")) {
-//			String firstname = update.getMessage().getFrom().getFirstName();
 			System.out.println(command);
 			String answer = EmojiParser.parseToUnicode(":alien:");
 
