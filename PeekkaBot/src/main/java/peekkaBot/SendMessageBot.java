@@ -13,9 +13,6 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.Keyboard
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import com.vdurmont.emoji.EmojiParser;
-
-
-
 public class SendMessageBot extends PeekkaMain {
 
 	public String sentMessage(Update update) {

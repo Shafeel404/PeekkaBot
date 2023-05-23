@@ -17,8 +17,10 @@ public class PeekkaMain extends TelegramLongPollingBot{
 		Boolean isPhoto = update.getMessage().hasPhoto();
 
 		if (isCommand) {
-			SendMessageBot bot = new SendMessageBot();
-			bot.sentMsg(update);
+//			SendMessageBot bot = new SendMessageBot();
+//			bot.sentMsg(update);
+			BotResponse response = new BotResponse();
+			response.sendResponse(update);
 		} else if (isPhoto) {
 			SendPhotoBot bot = new SendPhotoBot();
 //			long chat_id = update.getMessage().getChatId();
