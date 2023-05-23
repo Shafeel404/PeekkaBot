@@ -5,3 +5,6 @@
 build
 token.txt
 **/bin/*
+bin/
+bin/main/
+bin/main/*
