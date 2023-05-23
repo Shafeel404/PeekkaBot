@@ -1,10 +1,27 @@
 package peekkaBot;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 @SuppressWarnings("deprecation")
 public class PeekkaMain extends TelegramLongPollingBot{
+	
+	 String token = readTokenFromFile();
+//     getToken(token);
+     
+     private static String readTokenFromFile() {
+         String token = null;
+         try (BufferedReader reader = new BufferedReader(new FileReader("token.txt"))) {
+             token = reader.readLine();
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
+         return token;
+     }
 
 	@Override
 	public void onUpdateReceived(Update update) {
@@ -31,7 +48,8 @@ public class PeekkaMain extends TelegramLongPollingBot{
 	
 	@Override
 	public String getBotToken() {
-		return "5996127555:AAHj4B0xWu1-MIqdz3jzPf_-Huk0FfT7t6Y";
+		
+		return token;
 	}
 
 }
