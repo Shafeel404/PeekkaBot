@@ -45,7 +45,13 @@ public class SendMessageBot extends PeekkaMain {
 			message.setChatId(update.getMessage().getChatId());
 			sentMsg(message);
 
-		} else if (command.equals("/myname")) {
+	
+		}else if (command.equals("/findNumber")) {
+			String firstname = update.getMessage().getFrom().getFirstName();
+			message.setText(firstname);
+			message.setChatId(update.getMessage().getChatId());
+			sentMsg(message);
+		}else if (command.equals("/myname")) {
 			String firstname = update.getMessage().getFrom().getFirstName();
 			message.setText(firstname);
 			message.setChatId(update.getMessage().getChatId());
