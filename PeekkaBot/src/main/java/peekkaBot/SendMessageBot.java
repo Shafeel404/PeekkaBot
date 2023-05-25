@@ -13,6 +13,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.Keyboard
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import com.vdurmont.emoji.EmojiParser;
+
 public class SendMessageBot extends PeekkaMain {
 
 	public String sentMessage(Update update) {
@@ -42,13 +43,12 @@ public class SendMessageBot extends PeekkaMain {
 			message.setChatId(update.getMessage().getChatId());
 			sentMsg(message);
 
-	
-		}else if (command.equals("/findNumber")) {
+		} else if (command.equals("/findNumber")) {
 			String firstname = update.getMessage().getFrom().getFirstName();
 			message.setText(firstname);
 			message.setChatId(update.getMessage().getChatId());
 			sentMsg(message);
-		}else if (command.equals("/myname")) {
+		} else if (command.equals("/myname")) {
 			String firstname = update.getMessage().getFrom().getFirstName();
 			message.setText(firstname);
 			message.setChatId(update.getMessage().getChatId());
